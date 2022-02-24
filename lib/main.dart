@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_design_day_11_20/day11/day_12_screen.dart';
 
 import 'day11/day_11_screen.dart';
 
@@ -44,12 +45,20 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             MaterialButton(
               onPressed: () {
-                debugPrint("!!1");
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (_) => const Day11Screen()),
                 );
               },
               child: const Text("DAY 11"),
+              color: Colors.redAccent,
+            ),
+            MaterialButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const Day12Screen()),
+                );
+              },
+              child: const Text("DAY 12"),
               color: Colors.redAccent,
             ),
           ],
