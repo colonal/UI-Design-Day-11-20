@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ui_design_day_11_20/day11/day_12_screen.dart';
+import 'package:ui_design_day_11_20/day12/day_12_screen.dart';
 
 import 'day11/day_11_screen.dart';
+import 'day13/day_13_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'UI-Design-Day-11-20',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -59,6 +61,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
               child: const Text("DAY 12"),
+              color: Colors.redAccent,
+            ),
+            MaterialButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const Day13Screen()),
+                );
+              },
+              child: const Text("DAY 13"),
               color: Colors.redAccent,
             ),
           ],

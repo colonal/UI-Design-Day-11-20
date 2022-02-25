@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:ui_design_day_11_20/day11/fade_animation.dart';
+import 'package:ui_design_day_11_20/animation/fade_animation.dart';
 
 class Day12Screen extends StatelessWidget {
   const Day12Screen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          Expanded(
-            flex: 1,
-            child: Stack(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Stack(
               children: [
                 Container(
+                  width: double.infinity,
+                  height: height / 2.3,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage("assets/images/day12/background.png"),
@@ -86,11 +88,9 @@ class Day12Screen extends StatelessWidget {
                 )
               ],
             ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Padding(
-              padding: const EdgeInsets.all(50.0),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 50.0, vertical: 10),
               child: FadeAnimation(
                 child: Column(
                   children: [
@@ -168,8 +168,8 @@ class Day12Screen extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

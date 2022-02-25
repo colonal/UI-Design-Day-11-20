@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 
 class FadeAnimation extends StatefulWidget {
   final Widget child;
+  final Duration duration;
 
-  const FadeAnimation({required this.child, Key? key}) : super(key: key);
+  const FadeAnimation(
+      {required this.child,
+      Key? key,
+      this.duration = const Duration(seconds: 1)})
+      : super(key: key);
 
   @override
   _FadeAnimationState createState() => _FadeAnimationState();
@@ -18,8 +23,7 @@ class _FadeAnimationState extends State<FadeAnimation>
   void initState() {
     super.initState();
 
-    controller =
-        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    controller = AnimationController(vsync: this, duration: widget.duration);
 
     offset = Tween<Offset>(
       begin: const Offset(0.0, -0.3),

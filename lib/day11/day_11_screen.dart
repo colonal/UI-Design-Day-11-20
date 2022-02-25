@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ui_design_day_11_20/day11/fade_animation.dart';
+import 'package:ui_design_day_11_20/animation/fade_animation.dart';
 
 class Day11Screen extends StatefulWidget {
   const Day11Screen({Key? key}) : super(key: key);
