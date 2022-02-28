@@ -63,6 +63,7 @@ flutter:
     - assets/images/day12/
     - assets/images/day13/
     - assets/images/day15/
+    - assets/images/day16/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
