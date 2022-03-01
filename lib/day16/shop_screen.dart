@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_design_day_11_20/day16/day_16_screen.dart';
+import 'package:ui_design_day_11_20/day16/item_screen.dart';
 
 class ShopScreen extends StatelessWidget {
   const ShopScreen({Key? key}) : super(key: key);
@@ -115,9 +116,19 @@ class ShopScreen extends StatelessWidget {
                         scrollDirection: Axis.horizontal,
                         shrinkWrap: true,
                         itemBuilder: (context, index) {
-                          return buildPodectItme(
-                              title: categories[index][0],
-                              image: categories[index][1]);
+                          return GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (_) => ItemScreen(
+                                      categories: categories[index])));
+                            },
+                            child: Hero(
+                              tag: categories[index][1],
+                              child: buildPodectItme(
+                                  title: categories[index][0],
+                                  image: categories[index][1]),
+                            ),
+                          );
                         },
                         separatorBuilder: (_, __) => const SizedBox(width: 8),
                         itemCount: categories.length),
@@ -131,10 +142,17 @@ class ShopScreen extends StatelessWidget {
                         scrollDirection: Axis.horizontal,
                         shrinkWrap: true,
                         itemBuilder: (context, index) {
-                          return buildPodectItme(
-                              title: bestSelling[index][0],
-                              image: bestSelling[index][1],
-                              width: 190);
+                          return GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (_) => ItemScreen(
+                                      categories: bestSelling[index])));
+                            },
+                            child: buildPodectItme(
+                                title: bestSelling[index][0],
+                                image: bestSelling[index][1],
+                                width: 190),
+                          );
                         },
                         separatorBuilder: (_, __) => const SizedBox(width: 8),
                         itemCount: bestSelling.length),

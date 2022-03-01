@@ -102,6 +102,15 @@ class _MyHomePageState extends State<MyHomePage> {
               child: const Text("DAY 16"),
               color: Colors.redAccent,
             ),
+            MaterialButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const Day16Screen()),
+                );
+              },
+              child: const Text("DAY 17"),
+              color: Colors.redAccent,
+            ),
           ],
         ),
       ),
