@@ -6,6 +6,7 @@ import 'day13/day_13_screen.dart';
 import 'day14/day_14_screen.dart';
 import 'day15/day_15_screen.dart';
 import 'day16/day_16_screen.dart';
+import 'day18/day_18_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -109,6 +110,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
               child: const Text("DAY 17"),
+              color: Colors.redAccent,
+            ),
+            MaterialButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const Day18Screen()),
+                );
+              },
+              child: const Text("DAY 18"),
               color: Colors.redAccent,
             ),
           ],
